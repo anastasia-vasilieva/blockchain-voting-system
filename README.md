@@ -1,14 +1,17 @@
 # 🗳️ Blockchain Voting System
 
-## Diploma Project
+## Дипломный проект
 
-Electronic voting system developed as a diploma project for the specialty **Information Security of Automated Systems**.
+Проект выполнен в рамках обучения по специальности  
+**10.02.05 «Обеспечение информационной безопасности автоматизированных систем»**.
 
-### Description
+## Описание проекта
 
-The project is a prototype of an electronic voting system based on blockchain technology. The goal is to ensure the transparency and integrity of voting results.
+Разработан прототип системы электронного голосования с использованием технологии Blockchain для обеспечения прозрачности, целостности и достоверности результатов голосования.
 
-### Technologies
+Система позволяет пользователю зарегистрироваться, получить уникальный токен, выполнить голосование и проверить целостность сохранённых данных.
+
+## Используемые технологии
 
 - Python
 - Flask
@@ -16,46 +19,58 @@ The project is a prototype of an electronic voting system based on blockchain te
 - CSS
 - SQLite
 - SHA-256
+- Cryptography (Fernet)
 
-### Features
+## Реализованные функции
 
-- User registration
-- Electronic voting
-- Blockchain-based vote storage
-- Vote integrity verification
+- Регистрация пользователя и генерация уникального токена;
+- Проверка пользователя с помощью CAPTCHA;
+- Защищённое хранение токенов;
+- Запись результатов голосования в Blockchain;
+- Формирование хеша блока;
+- Проверка целостности Blockchain;
+- Просмотр результатов голосования.
 
-### Project structure
+## Структура проекта
 
-- `app.py` — application logic
-- `templates/` — HTML templates
+- `app.py` — логика приложения и обработка запросов;
+- `templates/` — HTML-шаблоны пользовательского интерфейса.
 
-### Author
+## Архитектура системы
 
-Anastasia Vasilieva
+Система состоит из следующих компонентов:
 
-## Screenshots
+- **Frontend** — HTML/CSS шаблоны пользовательского интерфейса.
+- **Backend** — Flask-приложение, реализующее обработку запросов и логику голосования.
+- **Database** — SQLite для хранения данных токенов.
+- **Blockchain ledger** — хранение записей о голосовании с проверкой целостности.
+- **Cryptographic mechanisms** — SHA-256 хеширование и шифрование данных.
 
-### Main page
+## Полученные навыки
+
+- Разработка веб-приложений на Python Flask;
+- Работа с базами данных SQLite;
+- Применение криптографических механизмов защиты информации;
+- Понимание принципов работы Blockchain;
+- Обеспечение целостности и защиты данных.
+
+## Скриншоты
+
+### Главная страница
 ![Main page](images/home.png)
 
-### Token generation
+### Получение токена
 ![Token](images/token.png)
 
-### Vote confirmation
+### Подтверждение голоса
 ![Vote confirmation](images/vote_confirmed.png)
 
-### Results verification
+### Проверка результатов
 ![Results](images/results.png)
 
-### Blockchain integrity verification
+### Проверка целостности Blockchain
 ![Blockchain](images/blockchain.png)
 
-## System architecture
+## Автор
 
-The system consists of several main components:
-
-- **Frontend** — HTML/CSS templates for user interaction.
-- **Backend** — Flask application responsible for processing requests and voting logic.
-- **Database** — SQLite database for storing user information and tokens.
-- **Blockchain ledger** — storage of voting records with integrity verification.
-- **Cryptographic mechanisms** — SHA-256 hashing and encryption for data protection.
+Anastasia Vasilieva
