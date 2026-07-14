@@ -32,3 +32,20 @@ The project is a prototype of an electronic voting system based on blockchain te
 ### Author
 
 Anastasia Vasilieva
+
+## Screenshots
+
+### Main page
+![Main page](images/home.png)
+
+### Token generation
+![Token](images/token.png)
+
+### Vote confirmation
+![Vote confirmation](images/vote_confirmed.png)
+
+### Results verification
+![Results](images/results.png)
+
+### Blockchain integrity verification
+![Blockchain](images/blockchain.png)
