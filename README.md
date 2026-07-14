@@ -49,3 +49,13 @@ Anastasia Vasilieva
 
 ### Blockchain integrity verification
 ![Blockchain](images/blockchain.png)
+
+## System architecture
+
+The system consists of several main components:
+
+- **Frontend** — HTML/CSS templates for user interaction.
+- **Backend** — Flask application responsible for processing requests and voting logic.
+- **Database** — SQLite database for storing user information and tokens.
+- **Blockchain ledger** — storage of voting records with integrity verification.
+- **Cryptographic mechanisms** — SHA-256 hashing and encryption for data protection.
