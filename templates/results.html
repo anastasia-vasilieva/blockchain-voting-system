@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📊 Результаты голосования</h2>
+<div id="results">
+    {% for candidate, count in votes.items() %}
+    <div style="margin: 10px 0;">
+        <strong>{{ candidate }}</strong>: {{ count }} голосов
+        <div style="background: #ecf0f1; border-radius: 10px; overflow: hidden; margin-top: 5px;">
+            <div style="background: #2c7cb6; width: {{ (count / total * 100) if total > 0 else 0 }}%; height: 25px; text-align: center; color: white; line-height: 25px;">
+                {{ (count / total * 100)|round(1) if total > 0 else 0 }}%
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <p><strong>Всего проголосовало: {{ total }}</strong></p>
+</div>
+<h3>🔍 Проверка квитанции</h3>
+<input type="text" id="receipt" placeholder="Введите хеш блока (квитанцию)" style="width: 80%;">
+<button onclick="verifyReceipt()">Проверить</button>
+<div id="verifyResult"></div>
+
+<script>
+    async function verifyReceipt() {
+        const receipt = document.getElementById('receipt').value;
+        const response = await fetch('/api/chain');
+        const data = await response.json();
+        const found = data.chain.find(block => block.hash === receipt);
+        const resultDiv = document.getElementById('verifyResult');
+        if (found) {
+            resultDiv.innerHTML = `<div class="message success">✅ Квитанция действительна! Блок #${found.index} за кандидата: ${found.data.candidate}</div>`;
+        } else {
+            resultDiv.innerHTML = `<div class="message error">❌ Квитанция не найдена в блокчейне</div>`;
+        }
+    }
+</script>
+{% endblock %}

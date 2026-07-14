@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🔑 Получение токена избирателя</h2>
+<form action="/do_register" method="post">
+    <p>Решите пример: <strong>{{ captcha_question }}</strong></p>
+    <input type="text" name="captcha" placeholder="Ваш ответ" required>
+    <br>
+    <button type="submit">Получить токен</button>
+</form>
+{% endblock %}

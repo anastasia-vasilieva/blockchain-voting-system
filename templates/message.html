@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="message {{ type }}">
+    {{ message | safe }}
+</div>
+<a href="/" class="button">Вернуться на главную</a>
+{% endblock %}

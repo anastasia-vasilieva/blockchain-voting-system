@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🗳️ Проголосовать</h2>
+<form method="post">
+    <input type="text" name="token" placeholder="Введите ваш токен" required>
+    <select name="candidate" required>
+        <option value="">Выберите кандидата</option>
+        <option value="Анна Петрова">Анна Петрова</option>
+        <option value="Дмитрий Волков">Дмитрий Волков</option>
+        <option value="Елена Смирнова">Елена Смирнова</option>
+    </select>
+    <br>
+    <button type="submit">Отдать голос</button>
+</form>
+{% endblock %}
